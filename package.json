@@ -1,0 +1,25 @@
+{
+  "name": "benbayard",
+  "version": "0.0.1",
+  "description": "A simple todo using rethink, redux and react",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/benbayard/todos.git"
+  },
+  "keywords": [
+    "todo",
+    "react",
+    "rething",
+    "redux"
+  ],
+  "author": "Ben Bayard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benbayard/todos/issues"
+  },
+  "homepage": "https://github.com/benbayard/todos#readme"
+}
