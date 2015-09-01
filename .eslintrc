@@ -1,0 +1,26 @@
+{
+  "ecmaFeatures": {
+    "modules": true,
+    "jsx":     true
+  },
+  "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+  },
+  "rules": {
+    "camelcase": 1,
+    "eqeqeq": 1,
+    "block-scoped-var": 1,
+    "curly": 1,
+    "no-invalid-regexp": 1,
+    "valid-jsdoc": 1,
+    "comma-dangle": 1,
+    "no-obj-calls": 1,
+    "max-statements": [1,6],
+    "max-len": [1, 80],
+    "max-depth": [1, 2],
+    "quotes": [1, "single"],
+    "indent": [1, "space"]
+  }
+}
