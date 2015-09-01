@@ -15,19 +15,16 @@ Object.keys(initialState)
       });
 const reducer = combineReducers(reducers);
 const store   = createStore(reducer, initialState);
-console.log('Routes', routes);
-console.log('history', history);
-Router.run(routes, location, (err, routeState) => {
-  debugger;
-  console.log(`Route State:
-    ${routeState}
-  `)
-  React.render(
-    <Provider store={store}>
-      {() =>
-        <Router children={routes} history={new BrowserHistory()} />
-      }
-    </Provider>,
-    document.getElementById('react-view')
-  );
-});
+
+React.render(
+  <Provider store={store}>
+    {() =>
+      <Router children={routes} history={new BrowserHistory()} />
+    }
+  </Provider>,
+  document.getElementById('react-view')
+);
+
+// Router.run(routes, location, (err, routeState) => {
+//
+// });

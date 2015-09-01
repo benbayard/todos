@@ -11,6 +11,7 @@ export default class Home extends React.Component {
 
     return (
       <div id="todo-list">
+        <h1>Todos list</h1>
         <TodosView todos={todos}
           {...bindActionCreators(TodoActions, dispatch)} />
         <TodosForm
