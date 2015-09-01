@@ -17,10 +17,9 @@
     "valid-jsdoc": 1,
     "comma-dangle": 1,
     "no-obj-calls": 1,
-    "max-statements": [1,6],
+    "max-statements": [1,10],
     "max-len": [1, 80],
     "max-depth": [1, 2],
-    "quotes": [1, "single"],
-    "indent": [1, "space"]
+    "quotes": [1, "single"]
   }
 }

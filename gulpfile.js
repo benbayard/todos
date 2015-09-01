@@ -10,18 +10,27 @@ var testGlob  = '**/*-test.jsx';
 var filesGlob = ['**/*.jsx', testGlob];
 var notTests  = ['**/*.jsx', '!' + testGlob];
 
+var lint = function() {
+  gulp.src('**/*.jsx')
+    .pipe(eslint())
+    .pipe(eslint.formatEach('stylish', process.stdout));
+}
+
+var test = function() {
+  gulp.src(testGlob)
+    .pipe(plumber())
+    .pipe(mocha({
+      compiler: babel
+    }));
+}
+
 gulp.task('watch', function() {
   watch(filesGlob, function() {
-    gulp.src(testGlob)
-      .pipe(plumber())
-      .pipe(mocha({
-        compiler: babel
-      }));
+    lint();
+    test();
   });
 });
 
 gulp.task('lint', function() {
-  gulp.src('**/*.jsx')
-    .pipe(eslint())
-    .pipe(eslint.formatEach('stylish', process.stdout));
+  lint();
 });

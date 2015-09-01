@@ -1,8 +1,33 @@
 import React       from 'react';
 import { Router }  from 'react-router';
-import { history } from 'react-router/lib/History';
-import routes      from 'routes';
-React.render(
-  <Router children={routes} history={history} />,
-  document.getElementById('react-view')
-);
+import BrowserHistory from 'react-router/lib/BrowserHistory';
+import routes      from '../shared/routes';
+import Location from 'react-router/lib/Location';
+import { createStore, combineReducers } from 'redux';
+import { Provider }                     from 'react-redux';
+import * as reducers                    from 'reducers';
+import { fromJS }                       from 'immutable';
+let initialState = window.__INITIAL_STATE__;
+var location = new Location(window.location.pathname, window.location.search);
+Object.keys(initialState)
+      .forEach(key => {
+        initialState[key] = fromJS(initialState[key]);
+      });
+const reducer = combineReducers(reducers);
+const store   = createStore(reducer, initialState);
+console.log('Routes', routes);
+console.log('history', history);
+Router.run(routes, location, (err, routeState) => {
+  debugger;
+  console.log(`Route State:
+    ${routeState}
+  `)
+  React.render(
+    <Provider store={store}>
+      {() =>
+        <Router children={routes} history={new BrowserHistory()} />
+      }
+    </Provider>,
+    document.getElementById('react-view')
+  );
+});
