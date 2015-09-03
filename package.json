@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_PATH=$NODE_PATH:./shared node --harmony .",
-    "dev": "npm run start & webpack-dev-server --progress --color"
+    "dev": "npm run start & webpack-dev-server --progress --color --port 8081"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "gulp-babel": "^5.2.1",
     "gulp-concat": "^2.6.0",
     "gulp-jsx": "^2.0.0",
+    "gulp-mocha": "^2.1.3",
     "immutable": "^3.7.4",
     "karma": "^0.13.9",
     "object-assign": "^3.0.0",
@@ -39,7 +40,9 @@
     "react-router": "1.0.0-beta3",
     "react-tools": "^0.13.3",
     "redux": "^1.0.0-rc",
-    "rethinkdb": "^2.1.0"
+    "rethinkdb": "^2.1.0",
+    "rethinkdb-websocket-client": "^0.4.2",
+    "rethinkdb-websocket-server": "^0.2.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
@@ -59,6 +62,7 @@
     "mocha-jsdom": "^0.2.1",
     "mocha-lcov-reporter": "0.0.1",
     "react-hot-loader": "^1.2.8",
+    "sinon": "^1.16.1",
     "tape": "^4.2.0",
     "temp": "^0.8.3",
     "webpack": "^1.10.5",
